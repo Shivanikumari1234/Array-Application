@@ -1,0 +1,41 @@
+//Array operation Creation Insertion
+import java.util.Scanner;
+public class A76 {
+    public static void main(String[] args)
+    {
+        int n,m,p;
+        Scanner r=new Scanner(System.in);
+        System.out.print("Enter the no. of Element in Array");
+        n=r.nextInt();
+        int a[]=new int[n];
+        int b[]=new int[n+1];
+        System.out.print("Enter value");
+        for(int i=0;i<n;i++)
+        {
+            a[i]=r.nextInt();
+        }
+        System.out.print("Enter index of new value to be inserted");
+        m=r.nextInt();
+        System.out.print("Enter new value to be inserted");
+        p=r.nextInt();
+        for(int i=0;i<n+1;i++)
+        {
+            if(i<m)
+            {
+                b[i]=a[i];
+            }
+            else if(i==m)
+            {
+                b[i]=p;
+            }
+            else {
+                b[i]=a[i-1];
+            }
+        }
+        System.out.print("Elements are");
+        for(int i=0;i<n+1;i++)
+        {
+            System.out.println(b[i]);
+        }
+    }
+}
